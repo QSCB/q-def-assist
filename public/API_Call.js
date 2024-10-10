@@ -1,8 +1,17 @@
 
- * Install the Generative AI SDK
-  *
-   * $ npm install @google/generative-ai
-    */
+ nmp Install the Generative AI SDK
+  
+   $ npm install @google/generative-ai
+  
+
+    const {
+      GoogleGenerativeAI,
+        HarmCategory,
+          HarmBlockThreshold,
+          } = require("@google/generative-ai");
+          const { GoogleAIFileManager } = require("@google/generative-ai/server");
+
+          const apiKey = process.env.GEMINI_API_KEY
 
     const {
       GoogleGenerativeAI,
@@ -59,9 +68,8 @@
                                           topK: 64,
                                             maxOutputTokens: 3200,
                                               responseMimeType: "text/plain",
-                                              };
-
-                                              async function run() {
+                                             };
+                                              async function run () {
                                                 // TODO Make these files available on the local file system
                                                   // You may need to update the file paths
                                                     const files = [
