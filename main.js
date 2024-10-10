@@ -1,3 +1,22 @@
+// Suggested code may be subject to a license. Learn more: ~LicenseLog:2301020791.
+import {ChatGoogleGenerativeAI} from '@langchain/google-genai';
+import {HarmBlockThreshold, HarmCategory} from '@google/generative-ai';
+// Configure imports and permissions as needed.
+// Example:
+// if (navigator.permissions) {
+//   navigator.permissions.query({name: 'camera'}).then(result => {
+//     if (result.state === 'granted') {
+//       // Access camera
+//     } else if (result.state === 'prompt') {
+//       // Prompt user for permission
+//     } else if (result.state === 'denied') {
+//       // Handle permission denied
+//     }
+//     result.onchange = () => {
+//       // Handle permission changes
+//     };
+//   });
+// }
 // Set up functionality and permissions as needed.
 // Add more code here to customize the script
 // Example:

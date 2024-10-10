@@ -1,5 +1,8 @@
 # To learn more about how to use Nix to configure your environment
 # see: https://developers.google.com/idx/guides/customize-idx-env
+    extensions = [
+      "ms-vscode.vscode-typescript-next"
+    ];
 { pkgs, ... }: {
   # Which nixpkgs channel to use.
   channel = "stable-24.05"; # or "unstable"
@@ -32,6 +35,20 @@
           manager = "web";
         };
       };
+    };    previews = {
+      enable = true;
+      previews = {
+        web = {
+          command = ["npm" "run" "dev" "--" "--port" "$PORT"];
+          manager = "web";
+        };
+        conversation = {
+          command = ["./node_modules/.bin/ts-node", "src/server.ts"];
+          manager = "terminal";
+          waitFor = "Ready!";
+        };
+      };
     };
+
   };
 }

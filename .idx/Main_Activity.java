@@ -27,3 +27,16 @@ public class MainActivity extends Activity {
                                                         public class MainActivity extends AppCompatActivity { // Extend AppCompatActivity
                                                             // ...
                                                             }
+                                                            @Override
+                                                            protected void onNewIntent(Intent intent) {
+                                                                super.onNewIntent(intent);
+                                                                    if (Intent.ACTION_VIEW.equals(intent.getAction())) {
+
+                                                                            Uri uri = intent.getData();
+                                                                                    if (uri != null && "myapp".equals(uri.getScheme())) {
+                                                                                                String filePath = uri.getQueryParameter("file_path");
+                                                                                                            // Grant authority to the specified file within your app's internal storage
+                                                                                                                    }
+                                                                                                                        }
+                                                                                                                        }
+                                                                                                                        

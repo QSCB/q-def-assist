@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Q-Def Assist</title>
+<style>
+body {
+  background-color: green;
+  border: 10px solid yellow;
+}
+
+input[type="text"], textarea, button {
+  border: 5px solid pink;
+}
+
+#response {
+  color: gray;
+}
+
+#userInput {
+  color: purple;
+}
+</style>
+</head>
+<body>
+  <header>
+    <h1>Q-Def Assist</h1> 
+  </header>
+
+  <h2>Model Name</h2> 
+
+  <textarea id="response" readonly></textarea>
+
+  <hr>
+
+  <textarea id="userInput"></textarea>
+  <button id="sendButton">Send</button>
+
+  <script>
+    const userInput = document.getElementById("userInput");
+    const responseArea = document.getElementById("response");
+    const sendButton = document.getElementById("sendButton");
+
+    sendButton.addEventListener("click", () => {
+      const userMessage = userInput.value;
+      
+      // Replace with actual code to send message to the model and receive a response
+      // For the example, we'll just simulate a response
+      const modelResponse = "This is a simulated response from the model."; 
+      responseArea.value = modelResponse;
+      userInput.value = ""; // Clear the input field after sending
+    });
+  </script>
+</body>
+</html>
