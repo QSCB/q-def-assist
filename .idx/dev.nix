@@ -1,19 +1,10 @@
-# To learn more about how to use Nix to configure your environment
-# see: https://developers.google.com/idx/guides/customize-idx-env
-    logs 
-nix
-{ pkgs, ... }: {
-
-  # Which nixpkgs channel to use.
-  channel = "stable-23.11"; # or "unstable"
+{
+channel = "stable-23.11"; # or "unstable"
 
   # Use https://search.nixos.org/packages to find packages
-  packages = [
+  packages = [packages
 
-    pkgs.nodejs_18
   ];
-
-  # Sets environment variables in the workspace
   env = {
     SOME_ENV_VAR = "hello";
   };
@@ -44,7 +35,7 @@ nix
     };
   };
 }
- pkgs, ... }: {
+pkgs, ... }: {
   # Which nixpkgs channel to use.
   channel = "stable-24.05"; # or "unstable"
   # Use https://search.nixos.org/packages to find packages
@@ -55,7 +46,6 @@ nix
 
   # Sets environment variables in the workspace
   env = {
-    // Add environment variables here.
   };
 
   idx = {
@@ -89,14 +79,14 @@ nix
     };
   };
 }
-   nodejs_18 = pkgs.nodejs_18.override {
+nodejs_18 = pkgs.nodejs_18.override {
       enableV8Snapshot = true;
       buildInputs = [ pkgs.openssl ];
     };
     packages = with pkgs; [
       nodejs_18
     ];
- {
+{
       enable = true;
     };{ pkgs, ... }: {
   # Which nixpkgs channel to use.
@@ -139,7 +129,7 @@ nix
   };
 }
 p
-{ pkgs, ... }: {
+{ pkgs }: {
   # Which nixpkgs channel to use.
   channel = "stable-24.05"; # or "unstable"
   # Use https://search.nixos.org/packages to find packages
@@ -185,10 +175,8 @@ p
     extensions = [
       "ms-vscode.vscode-typescript-next"
     ];
-{ pkgs, ... }: {
-  # Which nixpkgs channel to use.
-  channel = "stable-24.05"; # or "unstable"
-  # Use https://search.nixos.org/packages to find packages
+{ pkgs  }: {
+  channel = "stable-24.05";
   packages = [
     pkgs.nodejs_20
   ];
