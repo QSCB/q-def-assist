@@ -47,7 +47,38 @@ input[type="text"], textarea, button {
       // For the example, we'll just simulate a response
       const modelResponse = "This is a simulated response from the model."; 
       responseArea.value = modelResponse;
-      userInput.value = ""; // Clear the input field after sending
+      userInput.value = ""; // Clear the input field after sending    async function sendToModel(userMessage) {
+      try {
+        const response = await fetch('/api/generate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ message: userMessage })
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data.response;
+      } catch (error) {
+        console.error('Error sending message to model:', error);
+        return 'Error communicating with the model.';
+      }
+    }
+
+
+    sendButton.addEventListener("click", async () => {
+      const userMessage = userInput.value;
+      responseArea.value = "Thinking..."; 
+
+      const modelResponse = await sendToModel(userMessage);
+      responseArea.value = modelResponse;
+      userInput.value = ""; 
+    });
+
     });
   </script>
 </body>
