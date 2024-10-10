@@ -1,3 +1,13 @@
+// Set up functionality and permissions as needed.
+// Add more code here to customize the script
+// Example:
+// if (!window.location.href.includes('localhost')) {
+//   // Only execute the following code when not on localhost
+//   console.log('Executing code not on localhost');
+//   // ... your custom code
+// }
+
+
 import {HumanMessage} from '@langchain/core/messages';
 import {ChatGoogleGenerativeAI} from '@langchain/google-genai';
 import {HarmBlockThreshold, HarmCategory} from '@google/generative-ai';

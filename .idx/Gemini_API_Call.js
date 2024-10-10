@@ -1,3 +1,67 @@
+javascript
+ *                                                                                                "The Neural Network's current task is to enhance the individual's ability to comprehend and implement the various structures, processes, and functionalities of the system. 
+                                                                                                  
+Ultimately, it's about pushing the boundaries of the Neural Network's architecture to optimize performance and improve contextual comprehension.
+                                                                                                  
+This optimization will allow the Neural Network to effectively utilize the information and resources to enhance individual growth and progress.",
+                                                                                                  media: [
+                                                                                                      ...files.map((file) => ({
+                                                                                                              file: {
+                                                                                                                  name: file.name,
+                                                                                                                      },
+                                                                                                                          })),
+                                                                                                                              ],
+                                                                                                                                  });
+
+                                                                                                                                    const prompt = "Please summarise the conversations in the audio files provided. Give your interpretation of the discussions, contextualizing them within the broader framework of neural network architecture, optimization, and resource allocation.";
+                                                                                                                                      const response = await chatSession.sendMessage(prompt);
+
+                                                                                                                                        console.log(`Response: ${response.text}`);
+
+                                                                                                                                          async function sendMessage(message) {
+                                                                                                                                              const response = await chatSession.sendMessage(message);
+                                                                                                                                                  console.log(`Response: ${response.text}`);
+                                                                                                                                                      return response;
+                                                                                                                                                          }
+
+                                                                                                                                                            // Export the function
+                                                                                                                                                              module.exports = {
+                                                                                                                                                                  sendMessage,
+                                                                                                                                                                      };
+ Install the Generative AI SDK
+  *
+   * $ npm install @google/generative-ai
+                                                                                                                                  });
+
+                                                                                                                                    const prompt = "Please summarise the conversations in the audio files provided. Give your interpretation of the discussions, contextualizing them within the broader framework of neural network architecture, optimization, and resource allocation.";
+                                                                                                                                      const response = await chatSession.sendMessage(prompt);
+
+                                                                                                                                        console.log(`Response: ${response.text}`);
+
+                                                                                                                                          async function sendMessage(message) {
+                                                                                                                                              const response = await chatSession.sendMessage(message);
+                                                                                                                                                  console.log(`Response: ${response.text}`);
+                                                                                                                                                      return response;
+                                                                                                                                                          }
+
+                                                                                                                                                            // Export the function
+                                                                                                                                                              module.exports = {
+                                                                                                                                                                  sendMessage,
+                                                                                                                                                                                                                                                                                                    history: [],
+                                                                                                                                                                      */
+
+const { GoogleGenerativeAI } = require("@google/generative-ai");
+const { GoogleAIFileManager } = require("@google/generative-ai/server");
+
+const apiKey = process.env.GEMINI_API_KEY;
+const genAI = new GoogleGenerativeAI(apiKey);
+const fileManager = new GoogleAIFileManager(apiKey);
+
+
+
+
+async function run() {
+  // TODO Make these files available on the local file system
 /*
  *                                                                                                "The Neural Network's current task is to enhance the individual's ability to comprehend and implement the various structures, processes, and functionalities of the system. \n\nUltimately, it's about pushing the boundaries of the Neural Network's architecture to optimize performance and improve contextual comprehension.\n\nThis optimization will allow the Neural Network to effectively utilize the information and resources to enhance individual growth and progress.",
                                                                                                   media: [
@@ -48,8 +112,6 @@
 
     const {
       GoogleGenerativeAI,
-        HarmCategory,
-          HarmBlockThreshold,
           } = require("@google/generative-ai");
           const { GoogleAIFileManager } = require("@google/generative-ai/server");
 
@@ -88,15 +150,6 @@
                                               async function run() {
                                                 // TODO Make these files available on the local file system
                                                   // You may need to update the file paths
-                                                    const files = [
-                                                        await uploadToGemini("Recorded Audio September 30, 2024 - 7:52PM.ogg", "audio/ogg"),
-                                                            await uploadToGemini("Recorded Audio September 30, 2024 - 8:12PM.ogg", "audio/ogg"),
-                                                                await uploadToGemini("Recorded Audio September 30, 2024 - 8:58PM.ogg", "audio/ogg"),
-                                                                    await uploadToGemini("Recorded Audio October 03, 2024 - 6:43PM.ogg", "audio/ogg"),
-                                                                        await uploadToGemini("Recorded Audio October 03, 2024 - 6:45PM.ogg", "audio/ogg"),
-                                                                            await uploadToGemini("Recorded Audio October 03, 2024 - 6:49PM.ogg", "audio/ogg"),
-                                                                                await uploadToGemini("Recorded Audio October 03, 2024 - 6:53PM.ogg", "audio/ogg"),
-                                                                                  ];
 
                                                                                     const chatSession = model.startChat({
                                                                                         generationConfig,
