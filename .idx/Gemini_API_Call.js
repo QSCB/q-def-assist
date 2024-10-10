@@ -60,4 +60,5 @@
                                                                                         generationConfig,
                                                                                          // safetySettings: Adjust safety settings
                                                                                           // See https://ai.google.dev/gemini-api/docs/safety-settings
-                                                                                              history: l
+                                                                                              history: 
+                                                                                              https://g.co/ai/idxGetGeminiKey?embedded=0
