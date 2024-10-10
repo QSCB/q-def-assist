@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+const API_KEY = process.env.GEMINI_API_KEY;
 export function maybeShowApiKeyBanner(key, action = `enter it at the top of
 <code>main.js</code>`) {
   if (key === 'TODO') {

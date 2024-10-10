@@ -1,8 +1,50 @@
 /*
- * Install the Generative AI SDK
+ *                                                                                                "The Neural Network's current task is to enhance the individual's ability to comprehend and implement the various structures, processes, and functionalities of the system. \n\nUltimately, it's about pushing the boundaries of the Neural Network's architecture to optimize performance and improve contextual comprehension.\n\nThis optimization will allow the Neural Network to effectively utilize the information and resources to enhance individual growth and progress.",
+                                                                                                  media: [
+                                                                                                      ...files.map((file) => ({
+                                                                                                              file: {
+                                                                                                                  name: file.name,
+                                                                                                                      },
+                                                                                                                          })),
+                                                                                                                              ],
+                                                                                                                                  });
+
+                                                                                                                                    const prompt = "Please summarise the conversations in the audio files provided. Give your interpretation of the discussions, contextualizing them within the broader framework of neural network architecture, optimization, and resource allocation.";
+                                                                                                                                      const response = await chatSession.sendMessage(prompt);
+
+                                                                                                                                        console.log(`Response: ${response.text}`);
+
+                                                                                                                                          async function sendMessage(message) {
+                                                                                                                                              const response = await chatSession.sendMessage(message);
+                                                                                                                                                  console.log(`Response: ${response.text}`);
+                                                                                                                                                      return response;
+                                                                                                                                                          }
+
+                                                                                                                                                            // Export the function
+                                                                                                                                                              module.exports = {
+                                                                                                                                                                  sendMessage,
+                                                                                                                                                                      };
+ Install the Generative AI SDK
   *
    * $ npm install @google/generative-ai
-    */
+                                                                                                                                  });
+
+                                                                                                                                    const prompt = "Please summarise the conversations in the audio files provided. Give your interpretation of the discussions, contextualizing them within the broader framework of neural network architecture, optimization, and resource allocation.";
+                                                                                                                                      const response = await chatSession.sendMessage(prompt);
+
+                                                                                                                                        console.log(`Response: ${response.text}`);
+
+                                                                                                                                          async function sendMessage(message) {
+                                                                                                                                              const response = await chatSession.sendMessage(message);
+                                                                                                                                                  console.log(`Response: ${response.text}`);
+                                                                                                                                                      return response;
+                                                                                                                                                          }
+
+                                                                                                                                                            // Export the function
+                                                                                                                                                              module.exports = {
+                                                                                                                                                                  sendMessage,
+                                                                                                                                                                                                                                                                                                    history: [],
+                                                                                                                                                                      */
 
     const {
       GoogleGenerativeAI,
