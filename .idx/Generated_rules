@@ -1,0 +1,3 @@
+# Referenced at /storage/emulated/0/Q-Def-Assist/app/build/bin/AndroidManifest.xml:19
+-keep class com.qdefassist.MainActivity { <init>(); }
+-keep class com.qdefassist.MainActivity { *; }
