@@ -28,8 +28,10 @@ This optimization will allow the Neural Network to effectively utilize the infor
                                                                                                                                                               module.exports = {
                                                                                                                                                                   sendMessage,
                                                                                                                                                                       };
- Install the Generative AI SDK
-  *
+ install the Generative AI SDK
+  *  const genAI = new GoogleGenerativeAI(apiKey);
+  const fileManager = new GoogleAIFileManager(apiKey);
+
    * $ npm install @google/generative-ai
                                                                                                                                   });
 
@@ -54,8 +56,6 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const { GoogleAIFileManager } = require("@google/generative-ai/server");
 
 const apiKey = process.env.GEMINI_API_KEY;
-const genAI = new GoogleGenerativeAI(apiKey);
-const fileManager = new GoogleAIFileManager(apiKey);
 
 
 
@@ -119,20 +119,6 @@ async function run() {
           const genAI = new GoogleGenerativeAI(apiKey);
           const fileManager = new GoogleAIFileManager(apiKey);
 
-          /**
-           * Uploads the given file to Gemini.
-            *
-             * See https://ai.google.dev/gemini-api/docs/prompting_with_media
-              */
-              async function uploadToGemini(path, mimeType) {
-                const uploadResult = await fileManager.uploadFile(path, {
-                    mimeType,
-                        displayName: path,
-                          });
-                            const file = uploadResult.file;
-                              console.log(`Uploaded file ${file.displayName} as: ${file.name}`);
-                                return file;
-                                }
 
                                 const model = genAI.getGenerativeModel({
                                   model: "gemini-1.5-pro-exp-0827",
