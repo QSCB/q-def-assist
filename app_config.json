@@ -7,4 +7,13 @@
   "zipAlignEnabled": false,
   "viewBindingEnabled": false,
   "libraries": "[]"
+}{
+  "useR8": true, // Enabled R8
+  "minSdkVersion": 21,
+  "targetSdkVersion": 30,
+  "versionName": "1.0",
+  "versionCode": 1,
+  "zipAlignEnabled": true, // Enabled zip align
+  "viewBindingEnabled": true, // Enabled View Binding
+  "libraries": "[]" 
 }
